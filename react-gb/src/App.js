@@ -7,7 +7,7 @@ function App(props) {
       <header className="App-header">
         <h1 className="App-title">Это первое приложение на Реакте</h1>
         <p className="App-text"> Привет, {props.name}</p>
-        <Message const text ="Текст в компаненте Massage" />
+        <Message text ="Текст в компаненте Massage" />
       </header>
     </div>
   );
