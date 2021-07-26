@@ -1,7 +1,70 @@
-.Mes__text {
-  text-transform: uppercase;
-  font-weight: 700;
+.mes__text {
+  width: 100%;
+  font-size: 1.0rem;
   font-style: italic;
+  overflow-wrap: anywhere;
 
   color: wheat;
+ 
+}
+
+.mess__content {
+  width: 400px;
+  border: 1px solid wheat;
+  border-radius: 1.5rem;
+  padding: 10px;
+
+  background-color: unset;
+}
+
+.mess__body{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 6px;
+}
+
+.mess__body>p{
+  margin: 0;
+  font-size: 1.3rem;
+  text-align: initial;
+}
+
+.mess__author{
+  margin-bottom: 3px;
+}
+
+.mess__toolbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mess__btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mess__btn>img{
+  height: 35px;
+  width: 35px;
+}
+
+.mess__input{
+  font-size: 14px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+  width: 100%;
+}
+
+.mess__input:first-child{
+  width: 100px;
+  margin-right: 10px;
 }

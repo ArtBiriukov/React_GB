@@ -5,9 +5,9 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Это первое приложение на Реакте</h1>
+        <h1 className="App-title">Какой-то чат</h1>
         <p className="App-text"> Привет, {props.name}</p>
-        <Message text ="Текст в компаненте Massage" />
+        <Message />
       </header>
     </div>
   );
