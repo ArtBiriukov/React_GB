@@ -2,9 +2,6 @@ import React from 'react';
 import './Message.css';
 
 function MessageList({messageList}) {
-  if(messageList.text === '') {
-    console.log('pusto');
-  }
 
   return(
     <div className="mess__body-content">

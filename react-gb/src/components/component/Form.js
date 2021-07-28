@@ -22,7 +22,7 @@ function Form({onSendMessag}) {
   return (
     <form className="mess__toolbar" onSubmit={handelSubmit}>
       <input type="text" className="mess__input" placeholder="Введите сообщение" value={value} onChange={handleClick} /> 
-      <button className="mess__btn" type="sybmit">
+      <button className="mess__btn" type="submit">
       <img alt='arrow' src="https://img.icons8.com/flat-round/64/000000/arrow--v1.png"/>
       </button>
     </form>

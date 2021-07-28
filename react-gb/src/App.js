@@ -10,11 +10,14 @@ function App() {
   useEffect(() => {
     if (messageList.length && messageList[messageList.length - 1].author !== 'Robot') {
 
-      const robotMess = { author: 'Robot', text: 'hello', id: Date.now()};
       
-      setTimeout(() => {
+      
+      const timer = setTimeout(() => {
+        
+        const robotMess = { author: 'Robot', text: 'hello', id: Date.now()};
         setMessageList([...messageList, robotMess]);
       }, 1500);
+      return () => clearTimeout(timer);
     }
   }, [messageList]);
 
