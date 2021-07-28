@@ -1,13 +1,39 @@
-import Message from './components/component/Message.js';
+import React, {useState, useEffect, useCallback} from 'react';
+import MessageList from './components/component/MessageList.js';
+import Form from './components/component/Form.js';
+
 import './App.css';
 
-function App(props) {
+function App() {
+  const [messageList, setMessageList] = useState([]);
+
+  useEffect(() => {
+    if (messageList.length && messageList[messageList.length - 1].author !== 'Robot') {
+
+      
+      
+      const timer = setTimeout(() => {
+        
+        const robotMess = { author: 'Robot', text: 'hello', id: Date.now()};
+        setMessageList([...messageList, robotMess]);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [messageList]);
+
+ const handleSendMessage = useCallback((newMessage) => {
+
+     setMessageList([...messageList, newMessage]);
+   }, [messageList]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Это первое приложение на Реакте</h1>
-        <p className="App-text"> Привет, {props.name}</p>
-        <Message text ="Текст в компаненте Massage" />
+          <div className="mess__content">
+            <MessageList messageList={messageList} />
+            <hr />
+            <Form onSendMessag={handleSendMessage} /> 
+          </div>
       </header>
     </div>
   );
