@@ -7,7 +7,7 @@ function MyListItem({MylistItme}) {
      {MylistItme.map(item => (
         <div className="list__body" key={item.id}>
           <img className="list__icon" src="https://via.placeholder.com/50" alt="Icon"></img>
-          <p className="list__name"> {item.name}</p> <span>{item.id}</span>
+          <p className="list__name"> {item.name}</p> 
         </div> 
       ))}
     </div>
