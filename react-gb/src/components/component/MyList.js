@@ -16,17 +16,9 @@ const useStyles = makeStyles((theme) => ({
   classBox:{
     backgroundColor: '#d46767',
     borderRadius: 10,
-    marginBottom: 15
-  },
-
-  orange: {
-    color: theme.palette.getContrastText(deepOrange[500]),
-    backgroundColor: deepOrange[500],
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
+    marginBottom: 15,
+    cursor: 'pointer'
+  }
 }));
 
 
