@@ -29,6 +29,11 @@
   margin: 6px;
 }
 
+.mess__body-content {
+  height: 600px;
+  overflow: auto;
+}
+
 .mess__body>p{
   margin: 0;
   font-size: 1.2rem;
@@ -63,4 +68,41 @@
   border: none;
   padding: 8px;
   width: 100%;
+}
+
+/*list*/
+
+.list__bord{
+  height: 675px;
+
+  padding: 10px;
+  border: 1px solid wheat;
+  border-radius: 1.5rem;
+}
+
+.list__bord>h2{
+  font-size: 1em;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.list__body{
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+background-color: brown;
+border-radius: 5px;
+padding: 15px;
+}
+
+.list__icon{
+border-radius: 50%;
+margin-right: 10px;
+}
+
+.list__name{
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: .6em;
+  margin: 0;
 }
