@@ -2,7 +2,6 @@ import React, {useState, useEffect, useCallback} from 'react';
 import MessageList from './components/component/MessageList.js';
 import Form from './components/component/Form.js';
 import MyList from './components/component/MyList';
-import ListUi from './components/component/ListUi';
 
 import './App.css';
 
@@ -30,7 +29,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-         {/* <ListUi /> */}
         <MyList/> 
         <div className="mess__content">
           <MessageList messageList={messageList} />
