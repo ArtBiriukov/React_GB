@@ -7,7 +7,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import ListItemText from '@material-ui/core/ListItemText';
-import { deepOrange, deepPurple } from '@material-ui/core/colors';
 
 
 import './Components.css';
@@ -26,7 +25,7 @@ function MyList() {
 
   const classes = useStyles();
 
-  const [MylistItme, setMylistItme] = useState([
+  const [mylistItme, setMylistItme] = useState([
     { name: 'Ivan', id: 3 },
     { name: 'Igor', id: 4 },
     { name: 'Olga', id: 5 }
@@ -36,9 +35,9 @@ function MyList() {
     <div className="list__bord">
       <h2>Список чатов</h2>
 
-      <MyListItem MylistItme={MylistItme} classList='list__bord_content' /> 
+      <MyListItem MylistItme={mylistItme} classList='list__bord_content' /> 
 
-      {MylistItme.map(item => (
+      {mylistItme.map(item => (
       <ListItem className={classes.classBox}>
         <ListItemAvatar>
           <Avatar>
