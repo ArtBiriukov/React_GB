@@ -1,4 +1,4 @@
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -8,4 +8,16 @@
   color: white;
 }
 
+.app__content {
+  width: 960px;
+  display: flex;
 
+  border: 1px solid wheat;
+  border-radius: 5px;
+
+  background-color: #fff;
+}
+
+.messages__content{
+  width: 100%;
+}

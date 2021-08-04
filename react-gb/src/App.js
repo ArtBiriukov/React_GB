@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import MessageList from './components/component/MessageList.js';
 import Form from './components/component/Form.js';
-import MyList from './components/component/MyList';
+import ChatList from './components/component/ChatList';
 
 import './App.css';
 
@@ -12,7 +12,6 @@ function App() {
     if (messageList.length && messageList[messageList.length - 1].author !== 'Robot') {
 
       const timer = setTimeout(() => {
-        
         const robotMess = { author: 'Robot', text: 'hello', id: Date.now()};
         setMessageList([...messageList, robotMess]);
       }, 1500);
@@ -23,19 +22,24 @@ function App() {
 
  const handleSendMessage = useCallback((newMessage) => {
 
+    if (newMessage.text === '') {
+      console.log(newMessage.text = 'Привет мир!');
+    } else {
+      console.log(newMessage.text);
+    }
+
      setMessageList([...messageList, newMessage]);
    }, [messageList]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <MyList/> 
-        <div className="mess__content">
-          <MessageList messageList={messageList} />
-            <hr />
-          <Form onSendMessag={handleSendMessage} /> 
+    <div className="App"> 
+        <div className="app__content">
+        <ChatList />
+          <div className="messages__content">
+            <MessageList messageList={messageList} />
+            <Form onSendMessag={handleSendMessage} /> 
+          </div>
         </div>
-      </header>
     </div>
   );
 }
