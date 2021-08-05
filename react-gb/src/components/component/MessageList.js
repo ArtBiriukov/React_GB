@@ -8,7 +8,7 @@ console.log(messageList.length);
 if (messageList.length === 0) {
   return(
     <div className="messages__bord">
-      <p className="messages__attant">Пока что ни чего не написали</p>
+      <p className="messages__attant">Пока что ничего не написано</p>
     </div>    
   )
 } else {
