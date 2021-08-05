@@ -33,7 +33,7 @@ function Form({onSendMessag}) {
 
 
       <ListItemIcon>
-            <SendIcon className="message__icon" fontSize="big" />
+            <SendIcon className="message__icon" fontSize="small" />
       </ListItemIcon>
 
 

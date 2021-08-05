@@ -43,7 +43,7 @@ function ChatList() {
       <div className="chat-list__content">  
       <ChatItem chatItme={chatItme} classList='list__bord_content' /> 
         {chatItmeUi.map(item => (
-        <ListItem className={classes.classBox}>
+        <ListItem className={classes.classBox} key = {item.id}>
           <ListItemAvatar>
             <Avatar>
               <ImageIcon />

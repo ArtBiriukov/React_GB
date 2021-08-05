@@ -7,6 +7,16 @@
   overflow: auto;
 }
 
+.messages__attant{
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+  
+  color: #716969;
+  margin: 0;
+  text-align: center;
+}
+
 .message__body{
   width: 150px;
   background-color: blue;
@@ -17,7 +27,6 @@
 
 .message__body[datatype = "Robot"] {
   background-color: rgb(86, 86, 126);
-  float:right;
 }
 
 .message__body:last-child{
