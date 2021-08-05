@@ -1,7 +1,9 @@
 .messages__bord {
   height: 600px;
-  padding: 10px;
-  border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px;
   overflow: auto;
 }
 
@@ -10,19 +12,28 @@
   background-color: blue;
   border-radius: 10px;
   padding: 6px;
-  margin: 6px;
+  margin-bottom: 10px;
+}
+
+.message__body[datatype = "Robot"] {
+  background-color: rgb(86, 86, 126);
+  float:right;
+}
+
+.message__body:last-child{
+  margin-bottom: 0px;
 }
 
 .message__body>p{
   margin: 0;
 }
 
-.mess__author{
+.message__author{
  font-size: 16px;
  font-weight: 700;
 }
 
-.mess__text {
+.message__text {
   font-size: 18px;
   font-style: italic;
   overflow-wrap: anywhere;
@@ -30,33 +41,46 @@
   color: wheat;
 }
 
-
 /*Form*/
 .message__form{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 3px;
+  background-color: #f3f3f3;
+  border-top: 1px solid rgba(var(--b6a,219,219,219),1);
 }
 
 .message__form-input{
   font-size: 14px;
   outline: none;
-  border: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
   padding: 8px;
   width: 100%;
 }
 
 .message__form-btn{
-  background: none;
+  background-color: unset;
   border: none;
   cursor: pointer;
 }
 
-.message__form-btn>img{
-  height: 35px;
-  width: 35px;
+.message__form-btn .MuiListItemIcon-root{
+  min-width: 0px;
+  padding: 4px;
 }
+
+.message__form-btn .MuiSvgIcon-root{
+  height: 25px;
+  width: 25px;
+  transition: color .3s ease-in;
+}
+
+.message__form-btn .MuiListItemIcon-root:hover{
+  color: blueviolet;
+}
+
 
 /*Chat list*/
 .chat-list__body{
@@ -65,14 +89,15 @@
 }
 
 .chat-list__body>h2{
+  background-color: #f3f3f3;
   color: rgb(41, 51, 61);
   margin: 0;
   padding: 15px;
 
   border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 
-  font-size: 0.7em;
-  font-style: normal;
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
 
   cursor: default;
@@ -87,9 +112,9 @@
 .chat-item__body{
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  background-color: #656060;
-  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #2255efcf;
+  border-radius: 10px;
 
   padding: 8px 16px;
   cursor: pointer;
@@ -98,7 +123,7 @@
 
 .chat-item__body:hover{
   transform: scale(1.025);
-  box-shadow: 0px 0px 20px 0px #656060;
+  box-shadow: 0px 0px 10px 0px #2255efcf;
 }
 
 .chat-item__icon{
@@ -107,8 +132,7 @@
 }
 
 .chat-item__name{
-  cursor: pointer;
   padding: 5px 0;
-  font-size: .6em;
+  font-size: 16px;
   margin: 0;
 }

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
-import './Components.css';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import SendIcon from '@material-ui/icons/Send';
+import '../../App.css';
 
 function Form({onSendMessag}) {
   const [value, setValue] = useState('');
@@ -25,15 +27,17 @@ function Form({onSendMessag}) {
 
     return (
     <form className="message__form" onSubmit={handelSubmit}>
-      <input className="message__form-input" 
-      ref={textInput} 
-      autoFocus type="text" 
-            placeholder="Напешите сообщение ..." 
-      value={value} 
-      onChange={handleClick} 
-      /> 
+      <input className="message__form-input" ref={textInput} autoFocus type="text" placeholder="Напешите сообщение ..." value={value}   onChange={handleClick} /> 
+
       <button className="message__form-btn" type="submit">
-        <img alt='send message' src="https://img.icons8.com/flat-round/64/000000/arrow--v1.png"/>
+
+
+      <ListItemIcon>
+            <SendIcon className="message__icon" fontSize="big" />
+      </ListItemIcon>
+
+
+        {/* <img alt='send message' src="https://img.icons8.com/flat-round/64/000000/arrow--v1.png"/> */}
       </button>
     </form>
   )

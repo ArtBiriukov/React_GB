@@ -1,16 +1,14 @@
 import React from 'react';
-import './Components.css';
+import '../../App.css';
 
 function MessageList({messageList}) {
 
-console.log(messageList);
-
   return(
     <div className="messages__bord">
-      {messageList.map(mess => (
-        <div className="message__body" key={mess.id}>
-          <p className="mess__author">{mess.author}</p>
-          <p className="mess__text">{mess.text}</p>
+      {messageList.map(message => (
+        <div className="message__body" datatype={message.author} key={message.id}>
+          <p className="message__author">{message.author}</p>
+          <p className="message__text">{message.text}</p>
         </div> 
       ))}
     </div>    

@@ -9,10 +9,14 @@ function App() {
   const [messageList, setMessageList] = useState([]);
 
   useEffect(() => {
+
     if (messageList.length && messageList[messageList.length - 1].author !== 'Robot') {
 
+      const human = messageList[messageList.length - 1].author; 
+
       const timer = setTimeout(() => {
-        const robotMess = { author: 'Robot', text: 'hello', id: Date.now()};
+        const robotMess = { author: 'Robot', text: `Привет ${human}`, id: Date.now()};
+
         setMessageList([...messageList, robotMess]);
       }, 1500);
 
@@ -23,10 +27,8 @@ function App() {
  const handleSendMessage = useCallback((newMessage) => {
 
     if (newMessage.text === '') {
-      console.log(newMessage.text = 'Привет мир!');
-    } else {
-      console.log(newMessage.text);
-    }
+      newMessage.text = 'Привет мир!';
+    } 
 
      setMessageList([...messageList, newMessage]);
    }, [messageList]);
