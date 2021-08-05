@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../App.css';
 import { ListItem } from '@material-ui/core';
 import ChatItem from './ChatItem';
-
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
@@ -21,36 +21,27 @@ const useStyles = makeStyles(() => ({
 }));
 
 
-function ChatList() {
+function ChatList({chats}) {
 
   const classes = useStyles();
-
-  const [chatItme, setchatItme] = useState([
-    { name: 'Ivan', id: 3 },
-    { name: 'Igor', id: 4 },
-    { name: 'Olga', id: 5 }
-  ]);
-
-  const [chatItmeUi, setchatItmeUi] = useState([
-    { name: 'Artem', id: 6 },
-    { name: 'Nikolai', id: 7 },
-    { name: 'Anna', id: 8 }
-  ]);
 
   return ( 
     <div className="chat-list__body">
      <h2>Список чатов</h2>
       <div className="chat-list__content">  
-      <ChatItem chatItme={chatItme} classList='list__bord_content' /> 
-        {chatItmeUi.map(item => (
-        <ListItem className={classes.classBox} key = {item.id}>
-          <ListItemAvatar>
-            <Avatar>
-              <ImageIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary={item.name} />
-        </ListItem>
+      <ChatItem chatItme={chats} classList='list__bord_content' /> 
+       
+        {Object.values(chats).map(item => (
+            <ListItem className={classes.classBox} key = {item.id}>
+              <ListItemAvatar>
+                <Avatar>
+                  <ImageIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <Link to={`/home/${item.id}`}>
+              <ListItemText primary={item.name} />
+              </Link>
+          </ListItem>
         ))}
       </div>
     </div>

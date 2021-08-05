@@ -1,10 +1,7 @@
 import React from 'react';
-import '../../App.css';
+import './Components.css';
 
 function MessageList({messageList}) {
-console.log(messageList.length);
-
-
 if (messageList.length === 0) {
   return(
     <div className="messages__bord">

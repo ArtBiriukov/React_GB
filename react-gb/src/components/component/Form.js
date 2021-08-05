@@ -31,13 +31,10 @@ function Form({onSendMessag}) {
 
       <button className="message__form-btn" type="submit">
 
-
       <ListItemIcon>
             <SendIcon className="message__icon" fontSize="small" />
       </ListItemIcon>
 
-
-        {/* <img alt='send message' src="https://img.icons8.com/flat-round/64/000000/arrow--v1.png"/> */}
       </button>
     </form>
   )

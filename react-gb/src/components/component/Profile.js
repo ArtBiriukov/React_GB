@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Profile() {
+function Profile({ match }) {
+  
+  console.log(match);
   return (
     <div>
       <h2>JUST PROFILE</h2>
