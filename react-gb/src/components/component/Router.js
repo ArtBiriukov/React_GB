@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
-import Profile from './Profile.js';
-import Home from './Home.js';
+import Home from './Home/Home.js'
+import Profile from './Profile/Profile.js';
 
 function Router () {
 return(
@@ -19,7 +19,6 @@ return(
     </ul>
 
     <Switch>
-      
       <Route path="/profile"
           render={(data) => <Profile match={data.match} />}>
       </Route>

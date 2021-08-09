@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import { useParams } from "react-router-dom";
-import MessageList from './MessageList.js';
-import Form from './Form.js';
-import ChatList from './ChatList';
 
-import '../../App.css';
+import MessageList from '../MessageList/MessageList.js';
+import ChatList from '../ChatList/ChatList.js';
+import Form from '../Form/Form.js';
 
+import '../../../App.css';
 
 const initialChats = {
   chat1: {
@@ -27,33 +27,6 @@ const initialChats = {
 
 function Home() {
 
-  // const [messageList, setMessageList] = useState([]);
-
-  // useEffect(() => {
-
-  //   if (messageList.length && messageList[messageList.length - 1].author !== 'Robot') {
-
-  //     const human = messageList[messageList.length - 1].author; 
-
-  //     const timer = setTimeout(() => {
-  //       const robotMess = { author: 'Robot', text: `Привет ${human}`, id: Date.now()};
-
-  //       setMessageList([...messageList, robotMess]);
-  //     }, 1500);
-
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [messageList]);
-
-//  const handleSendMessage = useCallback((newMessage) => {
-
-//     if (newMessage.text === '') {
-//       newMessage.text = 'Привет мир!';
-//     } 
-
-//      setMessageList([...messageList, newMessage]);
-//    }, [messageList]);
-
 const { chatId } = useParams();
 console.log(!!chatId);
 
@@ -65,8 +38,7 @@ const handleSendMessage = useCallback((newMessage) => {
        newMessage.text = 'Привет мир!';
      } 
 
-    setChats({...chats,[chatId]: {...chats[chatId], messages: [...chats[chatId].messages, newMessage],
-                                  },
+    setChats({...chats,[chatId]: {...chats[chatId], messages: [...chats[chatId].messages, newMessage],},
             });
   },
   [chats, chatId]
@@ -80,8 +52,8 @@ useEffect(() => {
   const human = chats[chatId].messages[chats[chatId].messages.length - 1].author;
 
   const timeout = setTimeout(() => {
+    
     const newMessage = {
-
       author: 'Bot', 
       text: `Привет ${human}`, 
       id: Date.now()
@@ -92,23 +64,6 @@ useEffect(() => {
 
   return () => clearTimeout(timeout);
 }, [chats]);
-
-
-
-
-
-
-
-
-
-
-
-console.log(chats);
-
-
-
-
-
 
   return (
     <div className="App"> 

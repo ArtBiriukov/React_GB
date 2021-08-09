@@ -1,7 +1,6 @@
 import React from 'react';
-import '../../App.css';
+
 import { ListItem } from '@material-ui/core';
-import ChatItem from './ChatItem';
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -10,6 +9,8 @@ import ImageIcon from '@material-ui/icons/Image';
 import ListItemText from '@material-ui/core/ListItemText';
 
 
+import ChatItem from '../ChatItem/ChatItem.js';
+import '../../../App.css';
 
 const useStyles = makeStyles(() => ({
   classBox:{
@@ -20,7 +21,6 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-
 function ChatList({chats}) {
 
   const classes = useStyles();
@@ -28,7 +28,8 @@ function ChatList({chats}) {
   return ( 
     <div className="chat-list__body">
      <h2>Список чатов</h2>
-      <div className="chat-list__content">  
+      <div className="chat-list__content"> 
+
       <ChatItem chatItme={chats} classList='list__bord_content' /> 
        
         {Object.values(chats).map(item => (
@@ -43,6 +44,7 @@ function ChatList({chats}) {
               </Link>
           </ListItem>
         ))}
+
       </div>
     </div>
   )
