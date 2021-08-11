@@ -1,4 +1,24 @@
+.top__menu {
+  background-color: currentColor;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.top__menu>.MuiButton-root{
+  color: white;
+  font-size: 1rem;
+}
+
+.menu__link{
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+
 .messages__bord {
+  width: 700px;
   height: 600px;
   display: flex;
   flex-direction: column;

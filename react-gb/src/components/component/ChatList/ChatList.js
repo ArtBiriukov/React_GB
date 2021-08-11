@@ -8,7 +8,6 @@ import Avatar from '@material-ui/core/Avatar';
 import ImageIcon from '@material-ui/icons/Image';
 import ListItemText from '@material-ui/core/ListItemText';
 
-
 import ChatItem from '../ChatItem/ChatItem.js';
 import '../../../App.css';
 
@@ -33,16 +32,16 @@ function ChatList({chats}) {
       <ChatItem chatItme={chats} classList='list__bord_content' /> 
        
         {Object.values(chats).map(item => (
+          <Link to={`/home/${item.id}`}>
             <ListItem className={classes.classBox} key = {item.id}>
               <ListItemAvatar>
                 <Avatar>
                   <ImageIcon />
                 </Avatar>
               </ListItemAvatar>
-              <Link to={`/home/${item.id}`}>
               <ListItemText primary={item.name} />
-              </Link>
           </ListItem>
+          </Link>
         ))}
 
       </div>

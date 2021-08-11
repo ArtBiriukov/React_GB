@@ -28,7 +28,6 @@ const initialChats = {
 function Home() {
 
 const { chatId } = useParams();
-console.log(!!chatId);
 
 const [chats, setChats] = useState(initialChats);
 
@@ -45,7 +44,9 @@ const handleSendMessage = useCallback((newMessage) => {
 );
 
 useEffect(() => {
-  if (!chatId || !chats[chatId]?.messages.length || chats[chatId].messages[chats[chatId].messages.length - 1].author === 'Bot') {
+  if (!chatId ||
+    !chats[chatId]?.messages.length ||
+    chats[chatId].messages[chats[chatId].messages.length - 1].author === 'Bot') {
     return;
   }
 

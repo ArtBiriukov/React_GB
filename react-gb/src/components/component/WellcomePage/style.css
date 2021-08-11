@@ -1,0 +1,11 @@
+.wellcome__page{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222221;
+  font-size: 46px;
+  font-family: cursive;
+  color: floralwhite;
+  user-select: none;
+}
