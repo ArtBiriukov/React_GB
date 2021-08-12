@@ -13,12 +13,14 @@ export const profileReducer = (state = initialState, action) => {
         ...state,
         showName: !state.showName
       }
+
     case PROFILE_TOGGLE_SHOW: {
         return {
           ...state,
           show: !state.show,
         };
       }
+      
     case PROFILE_DROP_NAME: {
         return {
           ...state,

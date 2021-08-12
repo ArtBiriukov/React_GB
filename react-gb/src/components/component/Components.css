@@ -16,10 +16,8 @@
   margin-left: 10px;
 }
 
-
 .messages__bord {
   width: 700px;
-  height: 600px;
   display: flex;
   flex-direction: column;
 
@@ -141,9 +139,12 @@
 .chat-item__body{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
   background-color: #2255efcf;
   border-radius: 10px;
+
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
 
   padding: 8px 16px;
   cursor: pointer;
@@ -161,6 +162,7 @@
 }
 
 .chat-item__link{
+  display: flex;
 text-decoration: none;
 }
 

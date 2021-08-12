@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PROFILE_TOGGLE_SHOW } from '../../../store/action.js';
+import { PROFILE_TOGGLE_SHOW } from '../../../store/Profile/action';
 import {useSelector, useDispatch } from 'react-redux';
 
 function Profile() {

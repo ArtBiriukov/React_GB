@@ -1,0 +1,36 @@
+import React, { useState } from 'react';
+import { addChat } from '../../../store/Chats/actions';
+import { useDispatch} from 'react-redux';
+import './style.css';
+
+function AddChat() {
+
+  const dispatch = useDispatch();
+  const [value, setValue] = useState('');
+
+  //содержимое в инпуте
+  const handelchange = (e) => {
+    setValue(e.target.value);
+  };
+
+  //отправка данных
+  const handelClick = (e)=> {
+    e.preventDefault();
+
+    if(!value){
+      return;
+    }
+
+    const newId = `chat${Date.now()}`;
+    dispatch(addChat(newId, value));
+  }
+
+  return (
+      <form className='add-chats' >
+        <input onChange={handelchange} value={value}></input>
+        <button className='add_btn' onClick={handelClick}>&#43;</button> 
+      </form>
+  )
+}
+
+export default AddChat;

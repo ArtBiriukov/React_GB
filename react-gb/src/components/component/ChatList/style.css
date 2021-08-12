@@ -1,0 +1,17 @@
+.add-chats{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.add_btn{
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: coral;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}

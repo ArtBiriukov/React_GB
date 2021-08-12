@@ -4,8 +4,11 @@
   align-items: center;
   justify-content: center;
   background-color: #222221;
-  font-size: 46px;
+  user-select: none;
+}
+
+.wellcome__page>h2{
+  font-size: 60px;
   font-family: cursive;
   color: floralwhite;
-  user-select: none;
 }
