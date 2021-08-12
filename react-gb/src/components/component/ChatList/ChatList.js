@@ -11,6 +11,7 @@ import React from 'react';
 import ChatItem from '../ChatItem/ChatItem.js';
 import AddChat from './AddChat.js';
 import '../../../App.css';
+import { useParams } from 'react-router';
 
 // const useStyles = makeStyles(() => ({
 //   classBox:{
@@ -23,16 +24,45 @@ import '../../../App.css';
 
 function ChatList({chats}) {
 
+  const { chatId } = useParams();
   // const classes = useStyles();
+  console.log(chats[chatId]);
 
-  return ( 
-    <div className="chat-list__body">
-     <h2>Список чатов</h2>
-      <div className="chat-list__content"> 
+  
 
-      <ChatItem chatItme={chats} classList='list__bord_content' /> 
-       
-        {/* {Object.values(chats).map(item => (
+  if (Object.keys(chats).length == 0) {
+    return ( 
+      <div className="chat-list__body">
+      <h2>Список чатов</h2>
+        <div className='chats__content'> 
+          <div className="chat-list__content"> 
+            <h2 className='chat-list__title-empty'>список чатов пустой</h2>      
+          </div>
+          <AddChat />
+        </div>
+      </div>
+    )
+  } else {
+    return ( 
+      <div className="chat-list__body">
+      <h2>Список чатов</h2>
+        <div className='chats__content'> 
+          <div className="chat-list__content"> 
+            <ChatItem chatItme={chats} classList='list__bord_content' />       
+          </div>
+          <AddChat />
+        </div>
+      </div>
+    )
+  }
+}
+
+export default ChatList;
+
+
+
+
+{/* {Object.values(chats).map(item => (
           <Link to={`/home/${item.id}`}>
             <ListItem className={classes.classBox} key = {item.id}>
               <ListItemAvatar>
@@ -44,12 +74,3 @@ function ChatList({chats}) {
           </ListItem>
           </Link>
         ))} */}
-
-      </div>
-      
-      <AddChat />
-    </div>
-  )
-}
-
-export default ChatList;

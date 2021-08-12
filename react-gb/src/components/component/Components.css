@@ -135,6 +135,14 @@
   padding: 10px;
 }
 
+.chat-list__title-empty{
+  font-size: 20px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+
 /*Chat item */
 .chat-item__body{
   display: flex;
@@ -163,7 +171,7 @@
 
 .chat-item__link{
   display: flex;
-text-decoration: none;
+  text-decoration: none;
 }
 
 .chat-item__name{

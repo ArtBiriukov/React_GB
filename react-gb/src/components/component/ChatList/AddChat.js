@@ -27,7 +27,7 @@ function AddChat() {
 
   return (
       <form className='add-chats' >
-        <input onChange={handelchange} value={value}></input>
+        <input className='add_input' onChange={handelchange} value={value} placeholder='Добавить чат'></input>
         <button className='add_btn' onClick={handelClick}>&#43;</button> 
       </form>
   )
