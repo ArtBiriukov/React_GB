@@ -1,0 +1,4 @@
+export const CHAT_ADD = 'CHATS::CHAT_ADD';
+export const CHAT_REMOVE = 'CHATS::CHAT_REMOVE';
+
+export const MESSAGE_SAND = 'MESSAGES::MESSAGE_SAND';

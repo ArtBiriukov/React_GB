@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import SendIcon from '@material-ui/icons/Send';
-import '../../App.css';
+
+import '../../../App.css';
 
 function Form({onSendMessag}) {
+
   const [value, setValue] = useState('');
-
   const textInput = useRef(null);
-
   const handleClick = (e) => {
       setValue(e.target.value);
   }
