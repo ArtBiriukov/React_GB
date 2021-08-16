@@ -1,0 +1,1 @@
+export const selectorName = (state) => state.profile.name || 'Human';

@@ -1,4 +1,6 @@
-export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
+import { PROFILE_SET_NAME } from "./actionTypes";
 
-export const PROFILE_TOGGLE_SHOW = "PROFILE_TOGGLE_SHOW";
-export const PROFILE_DROP_NAME = "PROFILE_DROP_NAME";
+export const changeName = (payload) => ({
+  type: PROFILE_SET_NAME,
+  payload
+});

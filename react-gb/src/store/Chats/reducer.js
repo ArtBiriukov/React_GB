@@ -20,7 +20,6 @@ const initialState = {
   },
 };
 
-
 export const chatsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case CHAT_ADD: {

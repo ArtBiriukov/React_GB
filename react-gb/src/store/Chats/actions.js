@@ -22,3 +22,13 @@ export const sendMessage = (chatId, message) => ({
   },
 });
 
+export const sendMessageNew = (chatId, message) => (dispatch) => {
+  dispatch(sendMessageNew(chatId, message));
+
+  setTimeout(()=> {
+    dispatch(
+      sendMessage(chatId, {author: 'bot', text: 'Привет thunk'})
+    )
+  }, 1000);
+};
+

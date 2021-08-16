@@ -1,4 +1,4 @@
-import React, {useEffect, useCallback} from 'react';
+import React, { useCallback} from 'react';
 import { useHistory, useParams } from "react-router-dom";
 
 import MessageList from '../MessageList/MessageList.js';
@@ -8,49 +8,30 @@ import Form from '../Form/Form.js';
 import '../../../App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendMessage } from '../../../store/Chats/actions.js';
+import { selectorName } from '../../../store/Profile/selector.js';
 
 function Home() {
 
   const { chatId } = useParams();
-
-  const chats = useSelector(state => state.chats);
-  const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleSendMessage = useCallback((newMessage) => {
+  const chats = useSelector(state => state.chats);
+  const name = useSelector(selectorName);
+  const dispatch = useDispatch();
 
+  const handleSendMessage = useCallback((newMessage) => {
     if (newMessage.text === '') {
       newMessage.text = 'Привет мир!';
     } 
-    dispatch(sendMessage(chatId, newMessage));
+    dispatch(sendMessage(chatId, {...newMessage, author: name}));
     },
     [chatId]
   );
 
-  useEffect(() => {
-    if (!chatId ||
-      !chats[chatId]?.messages.length ||
-      chats[chatId].messages[chats[chatId].messages.length - 1].author === 'Bot') {
-      return;
-    }
-
-    const human = chats[chatId].messages[chats[chatId].messages.length - 1].author;
-
-    const timeout = setTimeout(() => {
-      
-      const newMessage = {
-        author: 'Bot', 
-        text: `Привет ${human}`, 
-        id: Date.now()
-      };
-
-      handleSendMessage(newMessage);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, [chats]);
-
-
+  if (!!chatId && !chats[chatId]) {
+    history.replace('/nochat');
+  }
+  
   if (!!chatId) {
     return (
       <div className="App"> 
@@ -72,7 +53,7 @@ function Home() {
           <ChatList chats={chats} />
         
             <div className="messages__content">
-              <h2 className="messages__content-title">Выберите чат с лево</h2>
+              <h2 className="messages__content-title">Выберите чат слево</h2>
             </div>
           
           </div>
