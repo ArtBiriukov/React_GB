@@ -32,7 +32,7 @@ function Home() {
     history.replace('/nochat');
   }
   
-  if (!!chatId) {
+  if (!!chatId && chats[chatId]?.messages) {
     return (
       <div className="App"> 
           <div className="app__content">
