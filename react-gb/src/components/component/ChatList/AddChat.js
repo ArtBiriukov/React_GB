@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { addChat } from '../../../store/Chats/actions';
 import { useDispatch} from 'react-redux';
 import './style.css';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 function AddChat() {
 
@@ -28,7 +29,7 @@ function AddChat() {
   return (
       <form className='add-chats' >
         <input className='add_input' onChange={handelchange} value={value} placeholder='Добавить чат'></input>
-        <button className='add_btn' onClick={handelClick}>&#43;</button> 
+        <button className='add_btn' onClick={handelClick}><AddCircleIcon /></button> 
       </form>
   )
 }

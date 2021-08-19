@@ -20,7 +20,7 @@ function Profile() {
   }
 
   return (
-    <div>
+    <div className='center'>
 
       <h2>Это профиль {name}</h2>
       <form action="" onSubmit={handleSubmit}>

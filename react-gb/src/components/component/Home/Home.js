@@ -31,7 +31,7 @@ function Home() {
   if (!!chatId && !chats[chatId]) {
     history.replace('/nochat');
   }
-  
+
   if (!!chatId && chats[chatId]?.messages) {
     return (
       <div className="App"> 
