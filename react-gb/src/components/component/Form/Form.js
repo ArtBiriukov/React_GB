@@ -1,29 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import SendIcon from '@material-ui/icons/Send';
 
 import '../../../App.css';
+import { useInput } from '../../../store/useInput';
 
-function Form({onSendMessag}) {
+function Form({ onSendMessag }) {
 
-  const [value, setValue] = useState('');
-  const textInput = useRef(null);
-  const handleClick = (e) => {
-      setValue(e.target.value);
-  }
+  const textInput = useRef();
+
+  const { value, handleClick, reset } = useInput('');
 
   const handelSubmit = (e) => {
     e.preventDefault();
 
     onSendMessag({
-      author: 'Nik',
       id: Date.now(),
       text: value
     });
-
-    setValue('');
-    textInput.current.focus();
+    reset();
   }
+  
+  useEffect(() => {
+    textInput.current?.focus();
+  }, []);
 
     return (
     <form className="message__form" onSubmit={handelSubmit}>

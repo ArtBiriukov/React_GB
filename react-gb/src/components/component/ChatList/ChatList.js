@@ -11,26 +11,14 @@ import React from 'react';
 import ChatItem from '../ChatItem/ChatItem.js';
 import AddChat from './AddChat.js';
 import '../../../App.css';
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 
-// const useStyles = makeStyles(() => ({
-//   classBox:{
-//     backgroundColor: '#d46767',
-//     borderRadius: 10,
-//     marginBottom: 15,
-//     cursor: 'pointer',
-//   }
-// }));
 
 function ChatList({chats}) {
 
-  const { chatId } = useParams();
-  // const classes = useStyles();
-  console.log(chats[chatId]);
-
+  // const { chatId } = useParams();
   
-
-  if (Object.keys(chats).length == 0) {
+  if (Object.keys(chats).length === 0) {
     return ( 
       <div className="chat-list__body">
       <h2>Список чатов</h2>
@@ -58,19 +46,3 @@ function ChatList({chats}) {
 }
 
 export default ChatList;
-
-
-
-
-{/* {Object.values(chats).map(item => (
-          <Link to={`/home/${item.id}`}>
-            <ListItem className={classes.classBox} key = {item.id}>
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary={item.name} />
-          </ListItem>
-          </Link>
-        ))} */}

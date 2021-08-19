@@ -1,26 +1,32 @@
-import React from 'react';
-
-import { PROFILE_TOGGLE_SHOW } from '../../../store/Profile/action';
+import React, { useState } from 'react';
+import { changeName } from '../../../store/Profile/action';
 import {useSelector, useDispatch } from 'react-redux';
+import { selectorName } from '../../../store/Profile/selector';
 
 function Profile() {
 
-  const profileState = useSelector ((state) => state);
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
+  const name = useSelector(selectorName);
 
-  const toggleShow = () => {
-    dispatch({
-      type: PROFILE_TOGGLE_SHOW,
-    });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(changeName(value));
+    setValue('');
+  }
+
+  const handleChange = (e) =>{
+    setValue(e.target.value);
+  }
 
   return (
     <div>
-      <h2>JUST PROFILE</h2>
 
-      <button onClick={toggleShow}>TOGGLE show</button>
-      {profileState.show && <div>THIS DEPENDS ON GLOBAL REDUX STATE</div>}
-
+      <h2>Это профиль {name}</h2>
+      <form action="" onSubmit={handleSubmit}>
+        <input value={value} onChange={handleChange} />
+        <button onClick={handleSubmit}>Save name</button>
+      </form>
     </div>
   )
 }

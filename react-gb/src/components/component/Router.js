@@ -57,11 +57,16 @@ return(
 
     <Switch>
       <Route path="/profile"
-          render={(data) => <Profile match={data.match} />}>
+          render={(data) => <Profile match={data.match} history={data.history}/>}>
       </Route>
 
       <Route path="/home/:chatId?">
         <Home />
+      </Route>
+
+      <Route path="/nochat">
+         <div> Нет больше чата!</div>
+         <Link to="/home">Домой</Link>
       </Route>
 
       <Route path="/" exact>
