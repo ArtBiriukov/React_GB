@@ -8,18 +8,18 @@ export const Login = ({ isSignUp }) => {
 
   const {
     value: email,
-    handleChange: handleChangeEmail,
+    handleClick: handleChangeEmail,
     reset: resetEmail,
   } = useInput("");
 
   const {
     value: password,
-    handleChange: handleChangePassword,
+    handleClick: handleChangePassword,
     reset: resetPassword,
   } = useInput("");
 
   console.log(useInput);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
