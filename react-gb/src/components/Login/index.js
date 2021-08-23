@@ -42,7 +42,7 @@ export const Login = ({ isSignUp }) => {
   };
 
   return (
-    <>
+    <div className='center'>
       <h2>{isSignUp ? "войти" : "Авторизуйся"}</h2>
 
       <form onSubmit={handleSubmit}>
@@ -58,6 +58,6 @@ export const Login = ({ isSignUp }) => {
         {!isSignUp ? "войти" : "Авторизируйся"}
       </Link>
 
-    </>
+    </div>
   );
 };
