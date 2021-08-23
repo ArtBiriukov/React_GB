@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import Button from '@material-ui/core/Button';
 
 import './style.css';
-import { removeChat } from '../../../store/Chats/actions';
+import { removeChat } from '../../store/Chats/actions';
 import { useDispatch } from 'react-redux';
 
 export const RemoveChat = ({id}) => {

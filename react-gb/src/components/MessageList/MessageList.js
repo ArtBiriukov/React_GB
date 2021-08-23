@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectorName } from '../../../store/Profile/selector';
+import { selectorName } from '../../store/Profile/selector';
 import '../Components.css';
 
 function MessageList({messageList}) {
 
-  const name = useSelector(selectorName)
+  const name = useSelector(selectorName);
+  console.log(name);
 
 if (messageList.length === 0) {
   return(

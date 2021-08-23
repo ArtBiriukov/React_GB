@@ -5,10 +5,10 @@ import MessageList from '../MessageList/MessageList.js';
 import ChatList from '../ChatList/ChatList.js';
 import Form from '../Form/Form.js';
 
-import '../../../App.css';
+import '../../App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage } from '../../../store/Chats/actions.js';
-import { selectorName } from '../../../store/Profile/selector.js';
+import { sendMessage } from '../../store/Chats/actions.js';
+import { selectorName } from '../../store/Profile/selector.js';
 
 function Home() {
 
@@ -31,7 +31,7 @@ function Home() {
   if (!!chatId && !chats[chatId]) {
     history.replace('/nochat');
   }
-  
+
   if (!!chatId && chats[chatId]?.messages) {
     return (
       <div className="App"> 

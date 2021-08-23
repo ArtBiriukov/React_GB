@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { changeName } from '../../../store/Profile/action';
+import { changeName } from '../../store/Profile/action';
 import {useSelector, useDispatch } from 'react-redux';
-import { selectorName } from '../../../store/Profile/selector';
+import { selectorName } from '../../store/Profile/selector';
 
 function Profile() {
 
@@ -20,7 +20,7 @@ function Profile() {
   }
 
   return (
-    <div>
+    <div className='center'>
 
       <h2>Это профиль {name}</h2>
       <form action="" onSubmit={handleSubmit}>

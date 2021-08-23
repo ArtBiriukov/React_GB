@@ -1,3 +1,7 @@
+.center {
+  padding:0 calc(50% - 570px);
+}
+
 .top__menu {
   background-color: currentColor;
   height: 50px;
@@ -12,8 +16,14 @@
 }
 
 .menu__link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  margin-left: 10px;
+}
+
+.menu__link-title{
+  margin-left: 10px
 }
 
 .messages__bord {
@@ -179,4 +189,23 @@
   padding: 5px 0;
   font-size: 18px;
   margin: 0;
+}
+
+/*404*/
+
+.type404{
+  color: red;
+  font-family: cursive;
+  text-align: center;
+}
+
+.type404__title{
+  margin: 0;
+  color: red;
+  font-size: 200px;
+}
+
+.type404__text {
+  margin: 0;
+  font-size: 60px;
 }
