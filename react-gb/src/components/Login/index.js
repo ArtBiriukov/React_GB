@@ -18,6 +18,8 @@ export const Login = ({ isSignUp }) => {
     reset: resetPassword,
   } = useInput("");
 
+  console.log(useInput);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,7 +43,6 @@ export const Login = ({ isSignUp }) => {
 
   return (
     <>
-
       <h2>{isSignUp ? "войти" : "Авторизуйся"}</h2>
 
       <form onSubmit={handleSubmit}>

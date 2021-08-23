@@ -27,12 +27,18 @@ function Form({ onSendMessag }) {
 
     return (
     <form className="message__form" onSubmit={handelSubmit}>
-      <input className="message__form-input" ref={textInput} autoFocus type="text" placeholder="Напешите сообщение ..." value={value}   onChange={handleClick} /> 
+      
+      <input className="message__form-input" 
+      ref={textInput} 
+      autoFocus type="text" 
+      placeholder="Напешите сообщение ..." 
+      value={value}   
+      onChange={handleClick} /> 
 
       <button className="message__form-btn" type="submit">
 
       <ListItemIcon>
-            <SendIcon className="message__icon" fontSize="small" />
+        <SendIcon className="message__icon" fontSize="small" />
       </ListItemIcon>
 
       </button>
