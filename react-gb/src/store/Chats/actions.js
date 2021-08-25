@@ -23,8 +23,8 @@ export const sendMessage = (chatId, message) => ({
 
 let timeout;
 
-export const sendMessageNew = (chatId, message) => (dispatch) => {
-  dispatch(sendMessageNew(chatId, message));
+export const sendMessageWithReply = (chatId, message) => (dispatch) => {
+  dispatch(sendMessage(chatId, message));
 
   if (timeout) {
     clearTimeout(timeout);

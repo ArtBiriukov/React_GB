@@ -7,7 +7,7 @@ import Form from '../Form/Form.js';
 
 import '../../../App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage } from '../../../store/Chats/actions.js';
+import { sendMessage, sendMessageWithReply } from '../../../store/Chats/actions.js';
 import { selectorName } from '../../../store/Profile/selector.js';
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
     if (newMessage.text === '') {
       newMessage.text = 'Привет мир!';
     } 
-    dispatch(sendMessage(chatId, {...newMessage, author: name}));
+    dispatch(sendMessageWithReply (chatId, {...newMessage, author: name}));
     },
     [chatId]
   );
