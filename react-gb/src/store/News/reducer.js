@@ -8,7 +8,7 @@ export const REQUEST_STATUS = {
 };
 
 const initialState = {
-  date: [],
+  data: [],
   request: {
     status: REQUEST_STATUS.IDLE,
     error: null,

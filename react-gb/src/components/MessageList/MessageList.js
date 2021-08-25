@@ -6,7 +6,6 @@ import '../Components.css';
 function MessageList({messageList}) {
 
   const name = useSelector(selectorName);
-  console.log(name);
 
 if (messageList.length === 0) {
   return(
