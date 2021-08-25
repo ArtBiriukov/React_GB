@@ -11,7 +11,6 @@ import { chatsReducer } from './Chats/reducer.js';
 import { newsReducer } from './News/reducer.js';
 import { profileReducer } from './Profile/profileReduce.js';
 
-
 const persistConfig = {
   key: 'GB-messenger',
   storage,
@@ -28,8 +27,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // const sagaMiddleware = createSagagMiddleware();
 
 export const store = createStore(
-    persistedReducer,
-    composeEnhancers(applyMiddleware(thunk))
+  persistedReducer,
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 export const persistor = persistStore(store);

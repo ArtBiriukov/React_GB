@@ -8,7 +8,7 @@ export const REQUEST_STATUS = {
 };
 
 const initialState = {
-  date: [],
+  DataTransferItem: [],
   request: {
     status: REQUEST_STATUS.IDLE,
     error: null,

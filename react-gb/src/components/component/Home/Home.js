@@ -53,7 +53,7 @@ function Home() {
           <ChatList chats={chats} />
         
             <div className="messages__content">
-              <h2 className="messages__content-title">Выберите чат слево</h2>
+              <h2 className="messages__content-title">Выберите чат в левой части</h2>
             </div>
           
           </div>

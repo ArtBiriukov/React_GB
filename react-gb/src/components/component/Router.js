@@ -20,11 +20,9 @@ import { News } from './News/index.js';
 function Router () {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-// 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-// 
   const handleClose = () => {
     setAnchorEl(null);
   };
