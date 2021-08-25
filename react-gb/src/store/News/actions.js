@@ -1,6 +1,6 @@
 import { REQUEST_ERROR, REQUEST_START, REQUEST_SUCCESS } from "./actionsType";
 
-const APU_URL = 'https://api.spaceflightnewsapi.net/v3​/articles';
+const API_URL = "https://api.spaceflightnewsapi.net/v3/articles";
 
 const getNewsStart = () => ({
   type: REQUEST_START,
@@ -20,7 +20,7 @@ export const getNews = () => async (dispatch) => {
   dispatch(getNewsStart());
 
   try {
-    const response = await fetch(APU_URL);
+    const response = await fetch(API_URL);
 
     console.log(response);
     if(!response.ok) {
