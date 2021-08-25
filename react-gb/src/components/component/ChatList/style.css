@@ -1,8 +1,21 @@
+.chat-list__body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chats__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .add-chats{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 10px;
+  padding: 3px 4px 4px 4px;
   background-color: #f3f3f3;
   border-top: 1px solid rgba(var(--b6a,219,219,219),1);
 }
@@ -10,14 +23,16 @@
 .add_btn{
   outline: none;
   border: none;
-  border-radius: 50%;
-  background-color: coral;
-  color: white;
-  font-size: 20px;
-  line-height: 1;
   cursor: pointer;
-}
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+} 
 
 .add_input{
+  font-size: 14px;
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 8px;
   width: 140px;
 }

@@ -5,8 +5,7 @@ import { MESSAGE_SAND } from "./actionsType";
 
 function* onSendMessage(action) {
   if (action.payload.message.author !== 'bot') {
-
-    console.log("----------", action.payload.message.author);
+    // console.log("----------", action.payload.message.author);
     
     yield delay(1000);
 

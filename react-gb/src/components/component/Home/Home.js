@@ -7,7 +7,7 @@ import Form from '../Form/Form.js';
 
 import '../../../App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage } from '../../../store/Chats/actions.js';
+import { sendMessage, sendMessageWithReply } from '../../../store/Chats/actions.js';
 import { selectorName } from '../../../store/Profile/selector.js';
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
     if (newMessage.text === '') {
       newMessage.text = 'Привет мир!';
     } 
-    dispatch(sendMessage(chatId, {...newMessage, author: name}));
+    dispatch(sendMessageWithReply (chatId, {...newMessage, author: name}));
     },
     [chatId]
   );
@@ -31,7 +31,7 @@ function Home() {
   if (!!chatId && !chats[chatId]) {
     history.replace('/nochat');
   }
-  
+
   if (!!chatId && chats[chatId]?.messages) {
     return (
       <div className="App"> 
@@ -53,7 +53,7 @@ function Home() {
           <ChatList chats={chats} />
         
             <div className="messages__content">
-              <h2 className="messages__content-title">Выберите чат слево</h2>
+              <h2 className="messages__content-title">Выберите чат в левой части</h2>
             </div>
           
           </div>
