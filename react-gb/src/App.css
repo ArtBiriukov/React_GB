@@ -1,4 +1,4 @@
-@import url(./components/component/Components.css);
+@import url(./components/Components.css);
 
 h1, h2, h3 ,h4 ,h5 {
   color: #282c34;
@@ -10,29 +10,25 @@ h1, h2, h3 ,h4 ,h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .app__content {
+  height: 700px;
   display: flex;
-
   border: 1px solid wheat;
   border-radius: 5px;
-
   background-color: #fff;
 }
 
 .messages__content{
- height: 600px;
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.messages__content-title {
-  font-size: 25px;
-  padding: 10px;
-  font-weight: lighter;
-}
-
+ }
+ 
+ .messages__content-title {
+   font-size: 25px;
+   padding: 10px;
+   font-weight: lighter;
+ }

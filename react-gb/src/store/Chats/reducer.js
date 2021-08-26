@@ -36,10 +36,8 @@ export const chatsReducer = (state = initialState, { type, payload }) => {
     case CHAT_REMOVE: {
       const newState = { ...state };
       delete newState[payload];
-
       return newState;
     }
-
 
     case MESSAGE_SAND: {
       return {

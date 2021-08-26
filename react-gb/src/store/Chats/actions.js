@@ -1,5 +1,4 @@
-import { CHAT_REMOVE, MESSAGE_SAND } from "./actionsType";
-import { CHAT_ADD } from "./actionsType";
+import { CHAT_ADD, CHAT_REMOVE, MESSAGE_SAND } from "./actionsType";
 
 export const addChat = (chatId, name) => ({
   type: CHAT_ADD,
@@ -22,10 +21,16 @@ export const sendMessage = (chatId, message) => ({
   },
 });
 
+let timeout;
+
 export const sendMessageNew = (chatId, message) => (dispatch) => {
   dispatch(sendMessageNew(chatId, message));
 
-  setTimeout(()=> {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+  
+  timeout = setTimeout(()=> {
     dispatch(
       sendMessage(chatId, {author: 'bot', text: 'Привет thunk'})
     )
